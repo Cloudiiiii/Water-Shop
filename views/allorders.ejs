@@ -1,0 +1,48 @@
+<%- include('layouts/header'); -%>
+<body>
+    <%- include('layouts/nav'); -%>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Post Code</th>
+                    <th>Province</th>
+                    <th>Water Bottles</th>
+                    <th>Water Bottles (1L)</th>
+                    <th>Delivery Days</th>
+                    <th>Subtotal</th>
+                    <th>Tax</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                    for(var order of orders){
+                        %>
+                        <tr>
+                            <td><%= order.name %></td>
+                            <td><%= order.email %></td>
+                            <td><%= order.phone %></td>
+                            <td><%= order.address %></td>
+                            <td><%= order.city %></td>
+                            <td><%= order.postt %></td>
+                            <td><%= order.province %></td>
+                            <td><%= order.water1 %></td>
+                            <td><%= order.water3 %></td>
+                            <td><%= order.delivery %></td>
+                            <td>$<%= order.subTotal.toFixed(2) %></td>
+                            <td>$<%= order.tax.toFixed(2) %></td>
+                            <td>$<%= order.total.toFixed(2) %></td>
+                        </tr>
+                        <%
+                    }
+                %>
+            </tbody>
+        </table>
+    </section>
+</body>
